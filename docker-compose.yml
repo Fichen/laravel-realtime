@@ -1,0 +1,34 @@
+version: "3.5"
+services:
+  php:
+    container_name: laravel-realtime
+    image: laravel-realtime-img
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    depends_on:
+      - db_server
+    env_file:
+      - .env
+    networks:
+      default:
+    volumes:
+      - .:/var/www/html # uncomment for local development and comment COPY source code from  Dockerfile
+  db_server:
+    image: mysql:5.7
+    #container_name:
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "4400:3306"
+    volumes:
+      - /var/db/mysql:/var/lib/mysql
+    networks:
+      - default
+networks:
+  default:

@@ -1,7 +1,22 @@
-# Repo con código de ejemplo
+# Intalación
 
-https://github.com/JuanDMeGon/realtime-con-laravel-crea-varias-aplicaciones-realtime
+## VM
+Aprovisionamiento de la máquina virtual en Windows
+```sh
+vagrant up --provision
+```
 
-
-## Curso de Udemy. Usuario del Ale (cordobes)
-https://www.udemy.com/course/realtime-y-laravel-crea-multiples-aplicaciones-tiempo-real-con-laravel/?couponCode=APR_20
+Docker image
+```sh
+cd /var/www/html
+sudo docker-compose up -d --build
+```
+Post instalación
+```sh
+sudo docker exec laravel-realtime composer update
+sudo docker exec laravel-realtime php artisan key:generate
+```
+Verificar si funciona en un browser
+```sh
+http://10.0.0.100
+```
