@@ -13,5 +13,5 @@ yarn-error.log
 composer.lock
 .vagrant
 ubuntu-bionic-18.04-cloudimg-console.log
-laravel-realtime.code-workspace
+*.code-workspace
 Dockerfile.ori
