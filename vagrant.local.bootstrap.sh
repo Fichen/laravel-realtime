@@ -56,4 +56,20 @@ if [ ! -x "$(command -v docker)" ]; then
 	sudo apt-get install --no-install-recommends -y docker-ce
 
 	sudo systemctl enable docker
+else
+    echo "Docker installed: $(sudo docker version)"
+    echo "Docker-compose installed: $(sudo docker-compose version)"
+fi
+
+if [ ! -x "$(command -v nodejs)" ]; then
+    sudo apt install -y --no-install-recommends build-essential
+    sudo apt install -y nodejs
+else
+    echo "Node installed: $(nodejs -v)"
+fi
+
+if [ ! -x "$(command npm)" ]; then
+    sudo apt install -y npm
+else
+    echo "npm installed: $(npm version)"
 fi
