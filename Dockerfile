@@ -31,6 +31,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcurl4-openssl-dev \
     libxml2-dev \
     libzip-dev \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin
 
 RUN docker-php-ext-configure bcmath --enable-bcmath \
@@ -42,7 +44,8 @@ RUN docker-php-ext-configure bcmath --enable-bcmath \
     bz2 \
     calendar \
     pdo_mysql \
-    zip
+    zip \
+    a2enmod rewrite
 
 COPY ./docker-configs/php/php.ini $PHP_INI_DIR/custom.ini
 COPY ./docker-configs/httpd/app.site.conf /etc/apache2/sites-available/000-default.conf
