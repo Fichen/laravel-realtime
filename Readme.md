@@ -24,7 +24,7 @@ sudo docker exec laravel-realtime php artisan config:clear
 ```
 Verificar si funciona en un browser
 ```sh
-http://10.0.0.100:8081
+    http://10.0.0.100:8081
 ```
 
 ----------
