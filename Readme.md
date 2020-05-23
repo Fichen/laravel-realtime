@@ -53,7 +53,13 @@ cd /var/www/html
 npm rebuild
 npm run dev
 
+# Docker-compose start
+cd /var/www/html
+sudo docker-compose up -d
+
 # Comandos del curso
 docker exec -ti laravel-realtime composer require laravel/ui
 docker exec -ti laravel-realtime php artisan ui bootstrap --auth
+- Video 13
+  - sudo docker exec -ti laravel-realtime php artisan make:event UserSessionChanged
 
