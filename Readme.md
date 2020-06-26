@@ -38,6 +38,7 @@ ver este: https://blog.entrostat.com/vagrant-ubuntu-docker-windows/
 apt-get install composer php-curl php-zip php-mbstring
 
 # node modules
+```sh
 cd /var/www
 mkdir node_modules
 cd html
@@ -52,6 +53,8 @@ cp -parf node_modules/* /var/www/node_modules
 cd /var/www/html
 npm rebuild
 npm run dev
+```
+
 
 # Docker-compose start
 cd /var/www/html
@@ -62,4 +65,12 @@ docker exec -ti laravel-realtime composer require laravel/ui
 docker exec -ti laravel-realtime php artisan ui bootstrap --auth
 - Video 13
   - sudo docker exec -ti laravel-realtime php artisan make:event UserSessionChanged
+- Video 14
+  - artisan make:listener BroadcastUserLoginNotification
+  - artisan make:listener BroadcastUserLogoutNotification
+  - Registry event into EventServiceProvider
+  - Broadcast channel 'notifications' into routes/channels.php
+  - change classes notification for html element into resources/js/app.js
+  - Log Login and Logout events into laravel.log
+
 
