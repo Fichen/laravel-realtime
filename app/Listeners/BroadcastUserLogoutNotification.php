@@ -27,6 +27,6 @@ class BroadcastUserLogoutNotification
      */
     public function handle(Logout $event)
     {
-        \broadcast(new UserSessioanged("{$event->user->name} is offline}", 'danger'));
+        \broadcast(new UserSessionChanged("{$event->user->name} is offline", 'danger'));
     }
 }
