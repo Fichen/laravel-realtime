@@ -14,7 +14,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class UserDeleted implements ShouldBroadcast
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable, InteractsWithSockets;
 
     /**
      * @type App\User
@@ -38,7 +38,7 @@ class UserDeleted implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-
+        \Log::debug('User deleted ' . $this->user->name);
         return new Channel('users');
     }
 }

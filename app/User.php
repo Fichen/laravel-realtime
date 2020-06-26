@@ -2,9 +2,12 @@
 
 namespace App;
 
+use App\Events\UserCreated;
+use App\Events\UserDeleted;
+use App\Events\UserUpdated;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -44,9 +47,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    /* protected $dispatchesEvents = [
+    protected $dispatchesEvents = [
         'created' => UserCreated::class,  
         'updated' => UserUpdated::class, 
         'deleted' => UserDeleted::class
-    ]; */
+    ];
 }
