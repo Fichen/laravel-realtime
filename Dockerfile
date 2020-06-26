@@ -45,6 +45,7 @@ RUN docker-php-ext-configure bcmath --enable-bcmath \
     calendar \
     pdo_mysql \
     zip \
+    curl \
     && a2enmod rewrite
 
 COPY ./docker-configs/php/php.ini $PHP_INI_DIR/custom.ini
