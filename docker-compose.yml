@@ -4,7 +4,7 @@ services:
     container_name: laravel-realtime
     image: laravel-realtime-img
     build: .
-    #restart: unless-stopped
+    restart: unless-stopped
     ports:
       - "8081:80"
     depends_on:
