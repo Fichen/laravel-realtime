@@ -27,6 +27,6 @@ class BroadcastUserLoginNotification
      */
     public function handle(Login $event)
     {
-        \broadcast(new UserSessionChanged("{$event->user->name} is online}", 'success'));
+        \broadcast(new UserSessionChanged("{$event->user->name} is online", 'success'));
     }
 }
