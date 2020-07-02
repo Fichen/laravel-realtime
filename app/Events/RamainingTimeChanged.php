@@ -25,7 +25,7 @@ class RamainingTimeChanged implements ShouldBroadcast
      */
     public function __construct($time)
     {
-        \Log::debug("time: $time");
+        /* \Log::debug("time: $time"); */
         $this->time = $time;
     }
 

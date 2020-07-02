@@ -60,17 +60,18 @@ npm run dev
 cd /var/www/html
 sudo docker-compose up -d
 
-# Commits - Videos
+# Some required code
+```sh
 docker exec -ti laravel-realtime composer require laravel/ui
 docker exec -ti laravel-realtime php artisan ui bootstrap --auth
-- Video 13
-  - sudo docker exec -ti laravel-realtime php artisan make:event UserSessionChanged
-- Video 14 and 15
-  - artisan make:listener BroadcastUserLoginNotification
-  - artisan make:listener BroadcastUserLogoutNotification
-  - Registry event into EventServiceProvider
-  - Broadcast channel 'notifications' into routes/channels.php
-  - change classes notification for html element into resources/js/app.js
-  - Log Login and Logout events into laravel.log
+```
+
+# In general, every commit is a video.
+
+# Starts broadcast events for countdown timer and winner number events with artisan command. This command never ends.
+```sh
+docker exec -ti laravel-realtime php artisan game:execute
+```
+
 
 
