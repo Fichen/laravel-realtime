@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
         # Provision
         subconfig.vm.provision "file", source: "local_environment_configs/ufw", destination: "/tmp/ufw"
         subconfig.vm.provision "file", source: "local_environment_configs/etc_hosts.txt", destination: "/tmp/hosts"
-        subconfig.vm.provision :shell, path: "Vagrant.local.bootstrap.sh"
+        subconfig.vm.provision :shell, path: "Vagrant.local.bootstrap.sh", run: "always"
         #
     end
   #
