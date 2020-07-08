@@ -41,7 +41,7 @@ class MessageSent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-         \Log::debug('User' . $this->user->name . '| message: '. $this->message);
+         \Log::debug('User: ' . $this->user->name . '| message: '. $this->message);
         return new PresenceChannel('chat');
     }
 }

@@ -84,3 +84,5 @@ if [ ! -x "$(command npm)" ]; then
 else
     echo "npm installed: $(npm version)"
 fi
+
+sudo docker-compose  -f /var/www/html/docker-compose.yml up -d
