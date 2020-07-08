@@ -17,7 +17,6 @@
                             <div class="row">
                                 <div class="col-12 border rounded-lg p-3">
                                     <ul id="messages" class="list-unstyled overflow-auto" style="height:45vh">
-                                        <li>test</li>
                                     </ul>
                                 </div>
                             </div>
@@ -35,7 +34,6 @@
                         <div class="col-2">
                             <p><strong>Online now</strong></p>
                             <ul id="users" class="list-unstyled overflow-auto text-info" style="height:40vh">
-                                <li>test</li>
                             </ul>
                         </div>
                    </div>
@@ -47,5 +45,28 @@
 @endsection
 @push('scripts')
 <script>
+    const usersElement = document.getElementById('users');
+
+    Echo.join('chat')
+    .here((users) => {
+        users.forEach((user, index) => {
+            let element = document.createElement('li');
+            element.setAttribute('id', user.id);
+            element.innerText = user.name;
+            usersElement.appendChild(element);
+        });
+
+    })
+    .joining((user) => {
+        let element = document.createElement('li');
+        element.setAttribute('id', user.id);
+        element.innerText = user.name;
+        usersElement.appendChild(element);
+
+    })
+    .leaving((user) => {
+        let element = document.getElementById(user.id);
+        element.parentNode.removeChild(element);
+    });
 </script>
 @endpush
