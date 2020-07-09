@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Events\MessageSent;
 use Illuminate\Http\Request;
 
@@ -38,5 +39,10 @@ class ChatController extends Controller
         \broadcast(new MessageSent($request->user(), $request->message));
 
         return \response()->json('Message broadcasted');
+    }
+
+    public function greetRecived(Request $request, User $user)
+    {
+        return "Greeting {$user->name} from {$request->user()->name}";
     }
 }
