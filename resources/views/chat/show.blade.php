@@ -46,6 +46,8 @@
 @push('scripts')
 <script>
     const usersElement = document.getElementById('users');
+    const messagesElement = document.getElementById('messages');
+
 
     Echo.join('chat')
     .here((users) => {
@@ -67,6 +69,14 @@
     .leaving((user) => {
         let element = document.getElementById(user.id);
         element.parentNode.removeChild(element);
+    })
+    .listen('MessageSent', (e) => {
+        let element = document.createElement('li');
+        element.setAttribute('id', e.user.id);
+        element.innerText = e.user.name + ': ' + e.message;
+
+        messagesElement.appendChild(element);
+        
     });
 </script>
 <script>
