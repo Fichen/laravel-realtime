@@ -61,7 +61,7 @@ else
     echo "Docker-compose installed: $(sudo docker-compose version)"
 fi
 
-if [ ! -x "$(command -v node)" ]; then
+#if [ ! -x "$(command -v node)" ]; then
     #sudo apt install -y build-essential
     #curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     #nvm install node
@@ -75,9 +75,9 @@ if [ ! -x "$(command -v node)" ]; then
     #echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     #sudo apt-get update && sudo apt-get install yarn
 
-else
-    echo "Node installed: $(nodejs -v)"
-fi
+#else
+#    echo "Node installed: $(nodejs -v)"
+#fi
 
 if [ ! -x "$(command npm)" ]; then
     sudo apt install -y npm
