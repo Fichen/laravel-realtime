@@ -79,10 +79,10 @@ fi
 #    echo "Node installed: $(nodejs -v)"
 #fi
 
-if [ ! -x "$(command npm)" ]; then
-    sudo apt install -y npm
-else
-    echo "npm installed: $(npm version)"
-fi
+#if [ ! -x "$(command npm)" ]; then
+#    sudo apt install -y npm
+#else
+#    echo "npm installed: $(npm version)"
+#fi
 
 sudo docker-compose  -f /var/www/html/docker-compose.yml up -d

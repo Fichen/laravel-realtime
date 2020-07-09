@@ -30,3 +30,8 @@ Broadcast::channel('chat', function ($user) {
         return ['id' => $user->id, 'name' => $user->name];
     }
 });
+
+//Private channel. It only allows see message owned by specific user
+Broadcast::channel('chat.greet.{receiver}', function ($user, $receiver) {
+    return (int) $user->id === (int) $receiver;
+});
