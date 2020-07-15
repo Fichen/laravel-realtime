@@ -42,7 +42,8 @@ RUN docker-php-ext-configure bcmath --enable-bcmath \
     bz2 \
     calendar \
     pdo_mysql \
-    zip
+    zip \
+    xml
 
 COPY ./docker-configs/php/php.ini $PHP_INI_DIR/custom.ini
 COPY ./docker-configs/httpd/app.site.conf /etc/apache2/sites-available/000-default.conf

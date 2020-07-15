@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
         end
         subconfig.vm.hostname = "laravel-realtime"
         subconfig.vm.network "forwarded_port", guest: 8081, host: 8081, guest_ip: LOCAL_IP, auto_correct: true
-        subconfig.vm.network "forwarded_port", guest: 4400, host: 4400, guest_ip: LOCAL_IP, auto_correct: true
+        subconfig.vm.network "forwarded_port", guest: 6001, host: 6001, guest_ip: LOCAL_IP, auto_correct: true
         subconfig.vm.network :private_network, ip: LOCAL_IP
 
         # Shared folder
